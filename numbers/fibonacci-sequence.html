@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- /Bootstrap -->
+
+    <link rel="stylesheet" href="/css/design.css">
+
+    <title>Fibonacci Sequence - Wtmerchant3's Project Solutions</title>
+  </head>
+  <body class="site">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/">Project Solutions</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item active" href="/numbers/">Numbers <span class="sr-only">(current)</span></a>
+                  <a class="dropdown-item" href="/algorithms/">Classic Algorithms</a>
+                  <a class="dropdown-item" href="/graph/">Graph</a>
+                  <a class="dropdown-item" href="/structures/">Data Structures</a>
+                  <a class="dropdown-item" href="/text/">Text</a>
+                  <a class="dropdown-item" href="/networking/">Networking</a>
+                  <a class="dropdown-item" href="/classes/">Classes</a>
+                  <a class="dropdown-item" href="/threading/">Threading</a>
+                  <a class="dropdown-item" href="/web/">Web</a>
+                  <a class="dropdown-item" href="/files/">Files</a>
+                  <a class="dropdown-item" href="/databases/">Databases</a>
+                  <a class="dropdown-item" href="/media/">Graphics and Multimedia</a>
+                  <a class="dropdown-item" href="/security/">Security</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="site-content" role="main" class="container">
+      <h1>Fibonacci Sequence</h1>
+      <p>Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number.</p>
+    </main>
+
+    <script type="text/javascript">
+    // Fibonacci Code:
+
+    function fibonacci(xn){
+      var fibString ="";
+      var fib = [0,1];   
+      if(xn < 0){
+          console.log("value must be 0 or greater.");
+      }
+      else{
+          for(var i = 2; i <= xn; i++){
+              fib.push(fib[i-1] + fib[i-2]);
+          }
+
+          for(var i=0; i<=xn; i++){
+              fibString += fib[i] + " ";
+          }
+          console.log(fibString);
+      }
+    };
+
+
+   function fibonacciLimit(limit){
+      var fibString =""; 
+      if(limit < 0){
+          console.log("value must be 0 or greater.");
+      }
+      else{
+        var fibTemp = 0;
+        var index = 0;
+        var fib = [];
+        while(fibTemp <= limit){
+          //Store the current fibonacci value in the array
+          fib[index]=fibTemp;
+          //increment the index
+          index++;
+          //Calcuate the next fibonacci value
+    
+          if(index===1){
+           fibTemp = 1; 
+          }
+    else{
+            fibTemp=fib[index-1]+fib[index-2];
+          }
+        }
+
+        for(var i=0; i<fib.length; i++){
+            fibString += fib[i] + " ";
+        }
+        console.log(fibString);
+      }
+    };
+
+
+
+    </script>
+
+    <footer id="site-footer">
+      <p class="text-muted">Code written by Wtmerchant3</p>
+    </footer>
+    <!-- Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- /Bootstrap and jQuery -->
+  </body>
+</html>
